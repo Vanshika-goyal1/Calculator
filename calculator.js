@@ -2,14 +2,14 @@ const express = require("express");
 const bodyParser = require("body-parser"); // body-parser to pass the http request
 
 const app = express();
-app.use(bodyParser.urlencoded({extended:true}));    // To access the form data.Extended to post nested object.
+app.use(bodyParser.urlencoded({extended:true}));    //body-parser allows you to go in any of the routes.Posted from html form.To access the form data.Extended to post nested object.
 
 app.get("/",function(req,res){
-    res.sendFile(__dirname + "/index.html");
+    res.sendFile(__dirname + "/index.html");  // file path for every server
 });
 
 app.post("/",function(req,res){
-    var num1 = Number(req.body.n1);
+    var num1 = Number(req.body.n1);  // Explicitly turning into number
     var num2 = Number(req.body.n2);
 
     var result = num1 + num2;
